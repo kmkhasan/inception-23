@@ -272,6 +272,19 @@ const RealisticScales = React.memo(function RealisticScales() {
     )
 });
 
+const neuralParticlesData = [...Array(24)].map(() => {
+    const radius = 2.5 + Math.random() * 1.5;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos((Math.random() * 2) - 1);
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+    const scale = 0.05 + Math.random() * 0.15;
+    const rotX = Math.random() * Math.PI;
+    const rotY = Math.random() * Math.PI;
+    return { x, y, z, scale, rotX, rotY };
+});
+
 const NeuralMatrix = React.memo(function NeuralMatrix() {
     const group = useRef<THREE.Group>(null);
     const particles = useRef<THREE.Group>(null);
@@ -304,21 +317,12 @@ const NeuralMatrix = React.memo(function NeuralMatrix() {
             
             {/* Orbiting Data Crystals */}
             <group ref={particles}>
-                {[...Array(24)].map((_, i) => {
-                    const radius = 2.5 + Math.random() * 1.5;
-                    const theta = Math.random() * Math.PI * 2;
-                    const phi = Math.acos((Math.random() * 2) - 1);
-                    const x = radius * Math.sin(phi) * Math.cos(theta);
-                    const y = radius * Math.sin(phi) * Math.sin(theta);
-                    const z = radius * Math.cos(phi);
-                    const scale = 0.05 + Math.random() * 0.15;
-                    return (
-                        <mesh key={i} position={[x, y, z]} rotation={[Math.random() * Math.PI, Math.random() * Math.PI, 0]}>
-                            <boxGeometry args={[scale, scale*3, scale]} />
-                            <meshStandardMaterial color="#e0f2fe" metalness={0.9} roughness={0.1} emissive="#0284c7" emissiveIntensity={1.5} />
-                        </mesh>
-                    )
-                })}
+                {neuralParticlesData.map((p, i) => (
+                    <mesh key={i} position={[p.x, p.y, p.z]} rotation={[p.rotX, p.rotY, 0]}>
+                        <boxGeometry args={[p.scale, p.scale*3, p.scale]} />
+                        <meshStandardMaterial color="#e0f2fe" metalness={0.9} roughness={0.1} emissive="#0284c7" emissiveIntensity={1.5} />
+                    </mesh>
+                ))}
             </group>
             <Sparkles count={400} scale={8} size={2} speed={1.5} opacity={0.8} color="#7dd3fc" />
         </Float>
@@ -342,7 +346,7 @@ function SlideWrapper({ index, activeIndex, children }: { index: number, activeI
         const isMobile = viewport.width < 5;
         
         // Beautiful Sweep Triangle Configuration
-        let targetX = 0; let targetY = 0; let targetZ = 0; let targetScale = 1; let targetOpacity = 1;
+        let targetX = 0; let targetY = 0; let targetZ = 0; let targetScale = 1;
 
         if (offset === 0) {
             // Active: Front Right

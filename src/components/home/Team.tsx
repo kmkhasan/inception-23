@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
-const TeamCard = ({ member, i, lang }: { member: any, i: number, lang: string }) => {
+const TeamCard = ({ member, i, lang }: { member: { name: string, role: { en: string, bn: string }, bio: { en: string, bn: string }, img: string }, i: number, lang: string }) => {
     return (
         <motion.div 
             initial={{ opacity: 0, scale: 0.8, rotateX: 20, y: 100 }}

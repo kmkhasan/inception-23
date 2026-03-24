@@ -1,7 +1,7 @@
 'use client';
 import { useAppStore } from '@/lib/store';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 export const GlobalPresence = () => {
@@ -63,6 +63,7 @@ export const GlobalPresence = () => {
                             transition={{ type: "spring", damping: 20 }}
                             className="absolute pointer-events-none w-80 h-96 rounded-2xl overflow-hidden shadow-2xl origin-center -translate-x-1/2 -translate-y-1/2 hidden md:block" // hidden on mobile
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={loc.img} alt={loc.city} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-brand-900/20 mix-blend-multiply" />
                         </motion.div>

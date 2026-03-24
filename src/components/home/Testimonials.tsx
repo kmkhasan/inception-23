@@ -55,7 +55,7 @@ export const Testimonials = () => {
                         >
                             <Quote className="text-brand-500/20 dark:text-brand-500/50 mb-8" size={64} />
                             <p className="font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-snug mb-16 max-w-4xl">
-                                "{lang === 'en' ? quotes[idx].quote.en : quotes[idx].quote.bn}"
+                                &quot;{lang === 'en' ? quotes[idx].quote.en : quotes[idx].quote.bn}&quot;
                             </p>
                             <div className="flex items-center gap-6">
                                 <div className="w-16 h-[1px] bg-brand-500"></div>
