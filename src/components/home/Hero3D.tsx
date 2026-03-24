@@ -6,7 +6,7 @@ import { Float, Stars, Sparkles, MeshTransmissionMaterial, Environment, OrbitCon
 import { motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 import { useAppStore } from '@/lib/store';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Lightbulb } from 'lucide-react';
 
 const homeContent = {
     slides: [
@@ -471,7 +471,8 @@ export default function Hero3D() {
                                 </button>
                                 <button className="relative group px-8 md:px-10 py-3 md:py-4 rounded-sm font-bold border border-gray-400 dark:border-gray-700 text-brand-950 dark:text-white transition-all uppercase tracking-widest text-xs overflow-hidden hover:border-transparent w-full sm:w-auto">
                                     <div className="absolute inset-0 bg-brand-50 dark:bg-night-800 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                                    <span className="relative z-10 block group-hover:-translate-y-0.5 transition-transform duration-300">
+                                    <span className="relative z-10 flex items-center gap-3 group-hover:-translate-y-0.5 transition-transform duration-300">
+                                        <Lightbulb size={16} className="text-brand-500" />
                                         {lang === 'en' ? 'Insights' : 'অন্তর্দৃষ্টি'}
                                     </span>
                                 </button>

@@ -2,7 +2,7 @@
 
 import { useAppStore } from '@/lib/store';
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Linkedin, Twitter, Github, Mail } from 'lucide-react';
 
 export const Footer = () => {
     const { lang } = useAppStore();
@@ -23,12 +23,18 @@ export const Footer = () => {
                         <p className="text-gray-400 text-lg leading-relaxed max-w-sm font-light mb-10">
                             {lang === 'en' ? 'Global strategic advisory, legal support, and digital transformation for the world\'s leading institutions.' : 'বাণিজ্যিক কৌশল, আইনি সহায়তা এবং প্রযুক্তির মাধ্যমে সফলতার পথনির্দেশ।'}
                         </p>
-                        <form className="relative max-w-sm group">
+                        <form className="relative max-w-sm group mb-8">
                             <input type="email" placeholder={lang === 'en' ? "Subscribe to Insights" : "ইমেইল লিখুন"} className="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-6 pr-14 text-sm outline-none focus:border-brand-500 focus:bg-white/10 transition-all text-white placeholder-gray-500 shadow-inner" />
                             <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30">
                                 <ArrowRight size={16} />
                             </button>
                         </form>
+                        <div className="flex gap-4">
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-brand-600 hover:border-transparent transition-all hover:-translate-y-1"><Linkedin size={18} /></a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-brand-600 hover:border-transparent transition-all hover:-translate-y-1"><Twitter size={18} /></a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-brand-600 hover:border-transparent transition-all hover:-translate-y-1"><Github size={18} /></a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-brand-600 hover:border-transparent transition-all hover:-translate-y-1"><Mail size={18} /></a>
+                        </div>
                     </div>
 
                     {/* Navigation Columns */}

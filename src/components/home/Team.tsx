@@ -1,7 +1,7 @@
 'use client';
 import { useAppStore } from '@/lib/store';
 import { motion } from 'framer-motion';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 const TeamCard = ({ member, i, lang }: { member: { name: string, role: { en: string, bn: string }, bio: { en: string, bn: string }, img: string }, i: number, lang: string }) => {
@@ -16,7 +16,10 @@ const TeamCard = ({ member, i, lang }: { member: { name: string, role: { en: str
             <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image src={member.img} alt={member.name} fill className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110 grayscale group-hover:grayscale-0" unoptimized />
                 <div className="absolute inset-0 bg-brand-950/0 group-hover:bg-brand-950/20 transition-colors duration-500" />
-                <div className="absolute bottom-4 right-4 translate-y-20 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                <div className="absolute bottom-4 right-4 translate-y-24 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col gap-2">
+                    <button className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white shadow-lg hover:scale-110 hover:bg-white hover:text-black transition-all ml-auto">
+                        <Mail size={16} />
+                    </button>
                     <button className="w-12 h-12 rounded-full bg-brand-600 flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform">
                         <Linkedin size={20} />
                     </button>
