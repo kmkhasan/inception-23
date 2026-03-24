@@ -44,7 +44,7 @@ export const Header = () => {
   return (
     <>
       <motion.div 
-        initial={{ y: -100 }}
+        initial={{ y: -100, width: "100%" }}
         animate={{ 
           y: 0, 
           height: scrolled ? 70 : 100, 

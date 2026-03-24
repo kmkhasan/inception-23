@@ -428,7 +428,7 @@ export default function Hero3D() {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeSlide}
-                            initial="hidden"
+                            initial={false}
                             animate="visible"
                             exit="exit"
                             variants={{
