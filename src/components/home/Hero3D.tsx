@@ -437,7 +437,7 @@ export default function Hero3D() {
                                 exit: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: -1 } }
                             }}
                         >
-                            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.8 } }, exit: { opacity: 0, y: -20 } }} className="flex items-center gap-4 mb-8 pt-20">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.8 } }, exit: { opacity: 0, y: -20 } }} className="flex items-center gap-4 mb-4 md:mb-8 mt-12 md:mt-20">
                                 <div className="h-0.5 w-16 bg-brand-700 shadow-[0_0_15px_rgba(20,184,166,0.6)]"></div>
                                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-brand-700 dark:text-brand-400">
                                     {lang === 'en' ? 'Core Expertise' : 'মূল দক্ষতা'}
@@ -446,30 +446,30 @@ export default function Hero3D() {
                             
                             <motion.h1 
                                 variants={{ hidden: { opacity: 0, y: 30, filter: "blur(4px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { ease: "easeOut", duration: 0.8 } }, exit: { opacity: 0, y: -30, filter: "blur(4px)" } }}
-                                className="text-5xl lg:text-8xl font-serif font-bold leading-[1.1] mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-brand-950 via-gray-800 to-gray-500 dark:from-white dark:via-gray-200 dark:to-gray-500 pb-2 drop-shadow-sm"
+                                className="text-4xl md:text-5xl lg:text-8xl font-serif font-bold leading-[1.1] mb-6 md:mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-brand-950 via-gray-800 to-gray-500 dark:from-white dark:via-gray-200 dark:to-gray-500 pb-2 drop-shadow-sm"
                             >
                                 {lang === 'en' ? current.title.en : current.title.bn}
                             </motion.h1>
                             
                             <motion.p 
                                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.8 } }, exit: { opacity: 0, y: -20 } }}
-                                className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg font-light leading-relaxed mb-12 border-l-2 border-brand-500 dark:border-brand-700 pl-6 shadow-[inset_2px_0_0_0_rgba(20,184,166,0.1)]"
+                                className="text-base md:text-xl text-gray-700 dark:text-gray-300 max-w-lg font-light leading-relaxed mb-8 md:mb-12 border-l-2 border-brand-500 dark:border-brand-700 pl-4 md:pl-6 shadow-[inset_2px_0_0_0_rgba(20,184,166,0.1)]"
                             >
                                 {lang === 'en' ? current.sub.en : current.sub.bn}
                             </motion.p>
                             
                             <motion.div 
                                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.8 } }, exit: { opacity: 0, y: -20 } }}
-                                className="flex gap-4"
+                                className="flex flex-col sm:flex-row gap-4"
                             >
-                                <button className="relative group bg-brand-700 hover:bg-brand-600 text-white px-10 py-4 rounded-sm font-bold transition-all flex items-center gap-3 uppercase tracking-widest text-xs overflow-hidden shadow-lg shadow-brand-700/30">
+                                <button className="relative group bg-brand-700 hover:bg-brand-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-sm font-bold transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs overflow-hidden shadow-lg shadow-brand-700/30 w-full sm:w-auto">
                                     <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                                     <span className="relative z-10 flex items-center gap-3">
                                         {lang === 'en' ? 'Explore' : 'দেখুন'}
                                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </button>
-                                <button className="relative group px-10 py-4 rounded-sm font-bold border border-gray-400 dark:border-gray-700 text-brand-950 dark:text-white transition-all uppercase tracking-widest text-xs overflow-hidden hover:border-transparent">
+                                <button className="relative group px-8 md:px-10 py-3 md:py-4 rounded-sm font-bold border border-gray-400 dark:border-gray-700 text-brand-950 dark:text-white transition-all uppercase tracking-widest text-xs overflow-hidden hover:border-transparent w-full sm:w-auto">
                                     <div className="absolute inset-0 bg-brand-50 dark:bg-night-800 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                                     <span className="relative z-10 block group-hover:-translate-y-0.5 transition-transform duration-300">
                                         {lang === 'en' ? 'Insights' : 'অন্তর্দৃষ্টি'}

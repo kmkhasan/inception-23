@@ -47,7 +47,7 @@ export const GlobalPresence = () => {
                     ref={containerRef} 
                     onMouseMove={handleMouseMove} 
                     onMouseLeave={() => setHoveredIndex(null)}
-                    className="relative border-t border-gray-200 dark:border-night-700 overflow-hidden"
+                    className="relative border-t border-gray-200 dark:border-night-700"
                 >
                     {/* Floating Images mapped to hovered index */}
                     {locations.map((loc, i) => (
@@ -61,7 +61,7 @@ export const GlobalPresence = () => {
                                 zIndex: hoveredIndex === i ? 20 : 0
                             }}
                             transition={{ type: "spring", damping: 20 }}
-                            className="absolute pointer-events-none w-80 h-96 rounded-2xl overflow-hidden shadow-2xl origin-center -translate-x-1/2 -translate-y-1/2 hidden md:block" // hidden on mobile
+                            className="absolute pointer-events-none w-48 h-64 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl origin-center -translate-x-1/2 -translate-y-1/2 z-20"
                         >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={loc.img} alt={loc.city} className="w-full h-full object-cover" />

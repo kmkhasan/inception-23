@@ -44,10 +44,9 @@ export const Header = () => {
   return (
     <>
       <motion.div 
-        initial={{ y: -100, x: "-50%" }}
+        initial={{ y: -100 }}
         animate={{ 
           y: 0, 
-          x: "-50%",
           height: scrolled ? 70 : 100, 
           marginTop: scrolled ? 24 : 0,
           borderRadius: scrolled ? 999 : 0,
@@ -55,7 +54,7 @@ export const Header = () => {
           maxWidth: scrolled ? 1100 : '100vw'
         }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`fixed top-0 left-1/2 z-50 flex items-center transition-colors duration-500 ${
+        className={`fixed top-0 inset-x-0 mx-auto z-50 flex items-center transition-colors duration-500 ${
             scrolled ? 'bg-night-950/85 backdrop-blur-3xl shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-white/10' 
                      : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent border-none'
         }`}

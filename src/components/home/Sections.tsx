@@ -33,7 +33,7 @@ export const Proof = () => {
                         { val: "30%", label: { en: "Avg. Efficiency Gain", bn: "গড় দক্ষতা বৃদ্ধি" } },
                         { val: "100%", label: { en: "Regulatory Compliance", bn: "নিয়ন্ত্রক সম্মতি" } }
                     ].map((stat, i) => (
-                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.1, type: "spring" }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-4 md:px-8">
+                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.15, type: "spring", stiffness: 150, damping: 12 }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-4 md:px-8">
                             <div suppressHydrationWarning className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-brand-700 to-brand-400 dark:from-white dark:to-brand-200">{stat.val}</div>
                             <div suppressHydrationWarning className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">{lang === 'en' ? stat.label.en : stat.label.bn}</div>
                         </motion.div>
@@ -48,17 +48,18 @@ export const InquiryForm = () => {
     const { lang } = useAppStore();
     return (
         <section className="py-32 bg-white dark:bg-night-900 overflow-hidden">
-            <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, type: "spring" }} suppressHydrationWarning className="container mx-auto px-6 max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-100px" }} transition={{ duration: 0.8, type: "spring" }} suppressHydrationWarning className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-serif font-bold mb-6 text-brand-950 dark:text-white">{lang === 'en' ? 'Confidential Inquiry' : 'গোপনীয় অনুসন্ধান'}</h2>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-brand-950 dark:text-white">{lang === 'en' ? 'Confidential Inquiry' : 'গোপনীয় অনুসন্ধান'}</h2>
                     <p className="text-gray-500 dark:text-gray-400">{lang === 'en' ? 'Reach our senior partners directly.' : 'সরাসরি যোগাযোগ করুন।'}</p>
                 </div>
-                <form className="bg-gray-50 dark:bg-night-800 p-10 md:p-16 border border-gray-100 dark:border-night-700 shadow-2xl dark:shadow-none space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <form className="bg-gray-50 dark:bg-night-800 p-8 md:p-16 border border-gray-100 dark:border-night-700 shadow-2xl dark:shadow-none space-y-8 rounded-xl" onSubmit={(e) => e.preventDefault()}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <input type="text" className="w-full p-4 bg-white dark:bg-night-900 border border-gray-200 dark:border-night-600 focus:border-brand-700 dark:focus:border-brand-500 outline-none transition-colors dark:text-white" placeholder={lang === 'en' ? "Name" : "নাম"} required />
-                        <input type="email" className="w-full p-4 bg-white dark:bg-night-900 border border-gray-200 dark:border-night-600 focus:border-brand-700 dark:focus:border-brand-500 outline-none transition-colors dark:text-white" placeholder={lang === 'en' ? "Work Email" : "ইমেইল"} required />
+                        <input type="text" className="w-full p-4 bg-white dark:bg-night-900 border border-gray-200 dark:border-night-600 focus:border-brand-700 dark:focus:border-brand-500 outline-none transition-colors dark:text-white rounded-md" placeholder={lang === 'en' ? "Name" : "নাম"} required />
+                        <input type="email" className="w-full p-4 bg-white dark:bg-night-900 border border-gray-200 dark:border-night-600 focus:border-brand-700 dark:focus:border-brand-500 outline-none transition-colors dark:text-white rounded-md" placeholder={lang === 'en' ? "Work Email" : "ইমেইল"} required />
                     </div>
-                    <button type="submit" className="w-full bg-brand-700 hover:bg-brand-600 text-white font-bold py-5 rounded-sm shadow-xl transition-all uppercase tracking-[0.2em] text-sm">{lang === 'en' ? 'Submit Securely' : 'নিরাপদে জমা দিন'}</button>
+                    <textarea className="w-full p-4 bg-white dark:bg-night-900 border border-gray-200 dark:border-night-600 focus:border-brand-700 dark:focus:border-brand-500 outline-none transition-colors dark:text-white h-40 resize-none rounded-md" placeholder={lang === 'en' ? "Confidential Message..." : "বার্তা..."} required></textarea>
+                    <button type="submit" className="w-full bg-brand-700 hover:bg-brand-600 text-white font-bold py-5 rounded-md shadow-xl transition-all uppercase tracking-[0.2em] text-sm hover:-translate-y-1">{lang === 'en' ? 'Submit Securely' : 'নিরাপদে জমা দিন'}</button>
                 </form>
             </motion.div>
         </section>
