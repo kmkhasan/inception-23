@@ -3,18 +3,29 @@ import { useAppStore } from '@/lib/store';
 import { motion } from 'framer-motion';
 import { TrendingUp, BarChart, ShieldCheck, Target, Lightbulb, Rocket, Lock } from 'lucide-react';
 import { RichIcon } from '@/components/ui/RichIcon';
+import { FinTechIllustration, PublicSectorIllustration, ManufacturingIllustration, TechIllustration, EnergyIllustration, HealthIllustration } from '@/components/ui/Illustrations';
 
 export const Industries = () => {
     const { lang } = useAppStore();
-    const industries = ['Financial Services', 'Public Sector', 'Manufacturing', 'Technology', 'Energy', 'Healthcare'];
+    const industries = [
+        { name: 'Financial Services', bn: 'আর্থিক সেবাসমূহ', icon: FinTechIllustration },
+        { name: 'Public Sector', bn: 'পাবলিক সেক্টর', icon: PublicSectorIllustration },
+        { name: 'Manufacturing', bn: 'উৎপাদন', icon: ManufacturingIllustration },
+        { name: 'Technology', bn: 'প্রযুক্তি', icon: TechIllustration },
+        { name: 'Energy', bn: 'শক্তি', icon: EnergyIllustration },
+        { name: 'Healthcare', bn: 'স্বাস্থ্যসেবা', icon: HealthIllustration }
+    ];
     return (
         <section id="industries" className="py-24 bg-white dark:bg-night-900 overflow-hidden">
             <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, type: "spring" }} suppressHydrationWarning className="container mx-auto px-6">
                 <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-center text-gray-400 mb-16">{lang === 'en' ? 'Industry Focus' : 'শিল্প ফোকাস'}</h2>
                 <div suppressHydrationWarning className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-gray-100 dark:border-night-800">
                     {industries.map((ind, i) => (
-                        <div suppressHydrationWarning key={i} className="p-10 border-b border-r border-gray-100 dark:border-night-800 hover:bg-brand-50 dark:hover:bg-night-800 transition-colors cursor-pointer text-center group flex items-center justify-center h-40">
-                            <span className="font-serif font-bold text-lg text-gray-600 dark:text-gray-400 group-hover:text-brand-700 dark:group-hover:text-brand-100 transition-colors">{ind}</span>
+                        <div suppressHydrationWarning key={i} className="px-4 py-8 md:py-10 border-b border-r border-gray-100 dark:border-night-800 hover:bg-brand-50/50 dark:hover:bg-night-800/50 transition-all duration-500 cursor-pointer text-center group flex flex-col items-center justify-center min-h-[220px]">
+                            <div className="w-20 h-20 md:w-24 md:h-24 mb-6 group-hover:-translate-y-2 group-hover:scale-105 transition-transform duration-500">
+                                <ind.icon className="w-full h-full drop-shadow-sm" />
+                            </div>
+                            <span className="font-serif font-bold text-sm md:text-base text-gray-700 dark:text-gray-300 group-hover:text-brand-700 dark:group-hover:text-brand-300 transition-colors uppercase tracking-[0.05em]">{lang === 'en' ? ind.name : ind.bn}</span>
                         </div>
                     ))}
                 </div>
