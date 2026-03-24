@@ -1,24 +1,24 @@
 'use client';
 import { useAppStore } from '@/lib/store';
-import { Building2, Landmark, Factory, Cpu, Flame, ActivitySquare } from 'lucide-react';
+import { FinTechIllustration, PublicSectorIllustration, ManufacturingIllustration, TechIllustration, EnergyIllustration, HealthIllustration } from '@/components/ui/Illustrations';
 import { motion } from 'framer-motion';
 
 export const IndustriesMarquee = () => {
     const { lang } = useAppStore();
     
     const industries = [
-        { name: 'Financial Services', icon: Landmark },
-        { name: 'Public Sector', icon: Building2 },
-        { name: 'Manufacturing', icon: Factory },
-        { name: 'Technology', icon: Cpu },
-        { name: 'Energy', icon: Flame },
-        { name: 'Healthcare', icon: ActivitySquare },
-        { name: 'Financial Services', icon: Landmark },
-        { name: 'Public Sector', icon: Building2 },
-        { name: 'Manufacturing', icon: Factory },
-        { name: 'Technology', icon: Cpu },
-        { name: 'Energy', icon: Flame },
-        { name: 'Healthcare', icon: ActivitySquare }
+        { name: 'Financial Services', icon: FinTechIllustration },
+        { name: 'Public Sector', icon: PublicSectorIllustration },
+        { name: 'Manufacturing', icon: ManufacturingIllustration },
+        { name: 'Technology', icon: TechIllustration },
+        { name: 'Energy', icon: EnergyIllustration },
+        { name: 'Healthcare', icon: HealthIllustration },
+        { name: 'Financial Services', icon: FinTechIllustration },
+        { name: 'Public Sector', icon: PublicSectorIllustration },
+        { name: 'Manufacturing', icon: ManufacturingIllustration },
+        { name: 'Technology', icon: TechIllustration },
+        { name: 'Energy', icon: EnergyIllustration },
+        { name: 'Healthcare', icon: HealthIllustration }
     ];
 
     return (
@@ -57,8 +57,8 @@ export const IndustriesMarquee = () => {
                     {industries.map((ind, i) => (
                         <div key={i} className="w-[320px] h-64 shrink-0 bg-white dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-2xl p-10 flex flex-col justify-between hover:-translate-y-2 hover:bg-brand-50 dark:hover:bg-brand-900/80 hover:border-brand-500/50 shadow-sm hover:shadow-xl dark:shadow-none transition-all duration-500 group cursor-pointer relative overflow-hidden">
                             <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-brand-500/10 dark:bg-brand-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-                            <div className="w-14 h-14 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex items-center justify-center group-hover:bg-brand-500/10 dark:group-hover:bg-brand-500/20 group-hover:border-brand-500/50 group-hover:scale-110 transition-all duration-500">
-                                <ind.icon className="text-gray-400 group-hover:text-brand-600 dark:group-hover:text-brand-300 transition-colors" size={24} />
+                            <div className="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex items-center justify-center group-hover:bg-brand-500/10 dark:group-hover:bg-brand-500/20 group-hover:border-brand-500/50 shadow-sm group-hover:shadow-xl transition-all duration-500 group-hover:-translate-y-2 relative overflow-hidden">
+                                <ind.icon className="w-10 h-10 drop-shadow-md group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div>
                                 <h3 className="font-serif font-bold text-2xl text-brand-950 dark:text-white tracking-wide mb-2">{ind.name}</h3>
