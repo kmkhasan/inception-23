@@ -2,6 +2,7 @@
 import { useAppStore } from '@/lib/store';
 import { motion } from 'framer-motion';
 import { TrendingUp, BarChart, ShieldCheck, Target, Lightbulb, Rocket, Lock } from 'lucide-react';
+import { RichIcon } from '@/components/ui/RichIcon';
 
 export const Industries = () => {
     const { lang } = useAppStore();
@@ -30,16 +31,16 @@ export const Proof = () => {
             <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.8, type: "spring", delay: 0.1 }} suppressHydrationWarning className="container mx-auto px-6 relative z-10">
                 <div suppressHydrationWarning className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-white/10">
                     {[
-                        { val: "$50B+", label: { en: "Assets Advised", bn: "উপদেষ্টা সম্পদ" }, icon: TrendingUp },
-                        { val: "30%", label: { en: "Avg. Efficiency Gain", bn: "গড় দক্ষতা বৃদ্ধি" }, icon: BarChart },
-                        { val: "100%", label: { en: "Regulatory Compliance", bn: "নিয়ন্ত্রক সম্মতি" }, icon: ShieldCheck }
+                        { val: "$50B+", label: { en: "Assets Advised", bn: "উপদেষ্টা সম্পদ" }, icon: TrendingUp, theme: 'emerald' },
+                        { val: "30%", label: { en: "Avg. Efficiency Gain", bn: "গড় দক্ষতা বৃদ্ধি" }, icon: BarChart, theme: 'blue' },
+                        { val: "100%", label: { en: "Regulatory Compliance", bn: "নিয়ন্ত্রক সম্মতি" }, icon: ShieldCheck, theme: 'purple' }
                     ].map((stat, i) => (
-                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.15, type: "spring", stiffness: 150, damping: 12 }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-4 md:px-8">
-                            <div suppressHydrationWarning className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-4">
-                                <stat.icon size={48} className="text-brand-500/30 dark:text-brand-500/50 hidden md:block" />
+                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.15, type: "spring", stiffness: 150, damping: 12 }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-4 md:px-8 flex flex-col items-center">
+                            <div suppressHydrationWarning className="flex flex-col items-center justify-center gap-4 md:gap-6 mb-4">
+                                <RichIcon icon={stat.icon} theme={stat.theme} />
                                 <div suppressHydrationWarning className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-b from-brand-700 to-brand-400 dark:from-white dark:to-brand-200">{stat.val}</div>
                             </div>
-                            <div suppressHydrationWarning className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400"><stat.icon size={16} className="inline md:hidden mr-2 -mt-1" />{lang === 'en' ? stat.label.en : stat.label.bn}</div>
+                            <div suppressHydrationWarning className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">{lang === 'en' ? stat.label.en : stat.label.bn}</div>
                         </motion.div>
                     ))}
                 </div>
@@ -73,9 +74,9 @@ export const InquiryForm = () => {
 export const Methodology = () => {
     const { lang } = useAppStore();
     const steps = [
-        { num: '01', icon: Target, title: { en: 'Strategic Assessment', bn: 'কৌশলগত মূল্যায়ন' }, desc: { en: 'Deep-dive analysis of market position, operational bottlenecks, and untapped digital vectors.', bn: 'বাজারের অবস্থান, অপারেশনাল বাধা এবং অব্যবহৃত ডিজিটাল ভেক্টরের গভীর বিশ্লেষণ।' } },
-        { num: '02', icon: Lightbulb, title: { en: 'Architecting Solutions', bn: 'সমাধান নির্মাণ' }, desc: { en: 'Developing custom frameworks leveraging legal loopholes and cutting-edge tech deployment.', bn: 'আইনি ফাঁকফোকর এবং অত্যাধুনিক প্রযুক্তির সাহায্যে কাস্টম ফ্রেমওয়ার্ক তৈরি।' } },
-        { num: '03', icon: Rocket, title: { en: 'Execution & Scale', bn: 'বাস্তবায়ন এবং স্কেল' }, desc: { en: 'Frictionless rollout with continuous optimization to secure maximum ROI and market share.', bn: 'সর্বোচ্চ আয় এবং বাজারের অংশীদারিত্ব নিশ্চিত করতে ধারাবাহিক অপ্টিমাইজেশন।' } }
+        { num: '01', icon: Target, theme: 'rose', title: { en: 'Strategic Assessment', bn: 'কৌশলগত মূল্যায়ন' }, desc: { en: 'Deep-dive analysis of market position, operational bottlenecks, and untapped digital vectors.', bn: 'বাজারের অবস্থান, অপারেশনাল বাধা এবং অব্যবহৃত ডিজিটাল ভেক্টরের গভীর বিশ্লেষণ।' } },
+        { num: '02', icon: Lightbulb, theme: 'amber', title: { en: 'Architecting Solutions', bn: 'সমাধান নির্মাণ' }, desc: { en: 'Developing custom frameworks leveraging legal loopholes and cutting-edge tech deployment.', bn: 'আইনি ফাঁকফোকর এবং অত্যাধুনিক প্রযুক্তির সাহায্যে কাস্টম ফ্রেমওয়ার্ক তৈরি।' } },
+        { num: '03', icon: Rocket, theme: 'cyan', title: { en: 'Execution & Scale', bn: 'বাস্তবায়ন এবং স্কেল' }, desc: { en: 'Frictionless rollout with continuous optimization to secure maximum ROI and market share.', bn: 'সর্বোচ্চ আয় এবং বাজারের অংশীদারিত্ব নিশ্চিত করতে ধারাবাহিক অপ্টিমাইজেশন।' } }
     ];
 
     return (
@@ -123,12 +124,9 @@ export const Methodology = () => {
                                             
                                             {/* Advanced Step Badge matching user request */}
                                             <div className="flex items-center gap-3 mb-5 group-hover:-translate-y-1 transition-transform duration-300">
-                                                {!isEven && <step.icon size={18} className="text-brand-600 dark:text-brand-400 hidden md:inline ml-1" />}
                                                 <span className="px-5 py-2 rounded-full border border-brand-200 dark:border-brand-500/30 bg-white dark:bg-night-900 text-brand-700 dark:text-brand-300 text-[11px] font-black uppercase tracking-[0.2em] shadow-sm flex items-center gap-2">
                                                     Step - {step.num}
                                                 </span>
-                                                {isEven && <step.icon size={18} className="text-brand-600 dark:text-brand-400 hidden md:inline mr-1" />}
-                                                <step.icon size={18} className="text-brand-600 dark:text-brand-400 inline md:hidden ml-1" />
                                             </div>
                                             
                                             {/* Premium Data Box */}
@@ -140,6 +138,10 @@ export const Methodology = () => {
                                                 {/* Flare background on hover */}
                                                 <div className="absolute -inset-4 bg-gradient-to-br from-brand-50 to-transparent dark:from-brand-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 pointer-events-none"></div>
                                                 
+                                                <div className={`flex w-full ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                                                    <RichIcon icon={step.icon} theme={step.theme} />
+                                                </div>
+
                                                 <h4 className="relative z-10 text-2xl md:text-3xl font-serif font-bold mb-4 text-brand-950 dark:text-white transition-colors group-hover:text-brand-700 dark:group-hover:text-brand-300">
                                                     {lang === 'en' ? step.title.en : step.title.bn}
                                                 </h4>
