@@ -29,7 +29,7 @@ export const GlobalPresence = () => {
         { city: "London", hq: "EMEA HQ", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800&auto=format&fit=crop" },
         { city: "Dubai", hq: "MENA Hub", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop" },
         { city: "Singapore", hq: "APAC HQ", img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format&fit=crop" },
-        { city: "Dhaka", hq: "South Asia Hub", img: "https://images.unsplash.com/photo-1620025983791-03714bde386a?q=80&w=800&auto=format&fit=crop" }
+        { city: "Dhaka", hq: "South Asia Hub", img: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=800&auto=format&fit=crop" }
     ];
 
     return (
