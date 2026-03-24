@@ -1,3 +1,4 @@
+'use client';
 import { useAppStore } from '@/lib/store';
 import { motion } from 'framer-motion';
 import { TrendingUp, BarChart, ShieldCheck, Target, Lightbulb, Rocket, Lock } from 'lucide-react';
