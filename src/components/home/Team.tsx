@@ -46,14 +46,14 @@ export const Team = () => {
     ];
 
     return (
-        <section id="team" className="py-40 bg-gray-50 dark:bg-night-950 relative overflow-hidden border-t border-gray-200 dark:border-night-800">
+        <section id="team" className="py-20 md:py-40 bg-gray-50 dark:bg-night-950 relative overflow-hidden border-t border-gray-200 dark:border-night-800">
             <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-                 <div className="flex flex-col md:flex-row justify-between items-end mb-24">
+                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24">
                      <div className="max-w-3xl">
                          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }} className="flex items-center gap-4 mb-6">
                              <div className="h-[2px] w-16 bg-brand-500"></div><span className="text-xs font-bold tracking-[0.3em] uppercase text-brand-600 dark:text-brand-400">{lang === 'en' ? 'The Partners' : 'অংশীদারবৃন্দ'}</span>
                          </motion.div>
-                         <h2 className="text-6xl md:text-8xl font-serif font-black mb-10 text-brand-950 dark:text-white leading-[0.9] tracking-tighter">
+                         <h2 className="text-5xl md:text-6xl lg:text-8xl font-serif font-black mb-10 text-brand-950 dark:text-white leading-[0.9] tracking-tighter">
                             {lang === 'en' ? 'Intellect &\nExperience.' : 'মেধা ও অভিজ্ঞতা।'}
                          </h2>
                      </div>

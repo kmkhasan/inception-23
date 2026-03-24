@@ -22,7 +22,7 @@ export const IndustriesMarquee = () => {
     ];
 
     return (
-        <section id="industries" className="py-32 bg-gray-50 dark:bg-night-950 overflow-hidden relative border-t border-b border-gray-200 dark:border-white/5">
+        <section id="industries" className="py-16 md:py-32 bg-gray-50 dark:bg-night-950 overflow-hidden relative border-t border-b border-gray-200 dark:border-white/5">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_0%,transparent_100%)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_100%)] pointer-events-none" />
             
             <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.8 }} className="container mx-auto px-6 mb-20 relative z-10 flex flex-col items-center">

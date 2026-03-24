@@ -24,7 +24,7 @@ export const Industries = () => {
 export const Proof = () => {
     const { lang } = useAppStore();
     return (
-        <section id="proof" className="py-24 bg-white dark:bg-night-950 relative overflow-hidden border-t border-gray-100 dark:border-night-800">
+        <section id="proof" className="py-16 md:py-24 bg-white dark:bg-night-950 relative overflow-hidden border-t border-gray-100 dark:border-night-800">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_0%,transparent_100%)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_0%,transparent_100%)] pointer-events-none"></div>
             <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.8, type: "spring", delay: 0.1 }} suppressHydrationWarning className="container mx-auto px-6 relative z-10">
                 <div suppressHydrationWarning className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-white/10">
@@ -33,8 +33,8 @@ export const Proof = () => {
                         { val: "30%", label: { en: "Avg. Efficiency Gain", bn: "গড় দক্ষতা বৃদ্ধি" } },
                         { val: "100%", label: { en: "Regulatory Compliance", bn: "নিয়ন্ত্রক সম্মতি" } }
                     ].map((stat, i) => (
-                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.1, type: "spring" }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-8">
-                            <div suppressHydrationWarning className="text-5xl md:text-7xl font-serif font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-brand-700 to-brand-400 dark:from-white dark:to-brand-200">{stat.val}</div>
+                        <motion.div initial={{ scale: 0.5, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: false }} transition={{ delay: i * 0.1, type: "spring" }} suppressHydrationWarning key={i} className="pt-8 md:pt-0 px-4 md:px-8">
+                            <div suppressHydrationWarning className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-b from-brand-700 to-brand-400 dark:from-white dark:to-brand-200">{stat.val}</div>
                             <div suppressHydrationWarning className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">{lang === 'en' ? stat.label.en : stat.label.bn}</div>
                         </motion.div>
                     ))}
@@ -74,7 +74,7 @@ export const Methodology = () => {
     ];
 
     return (
-        <section className="py-24 bg-gray-50 dark:bg-night-950 relative overflow-hidden border-t border-gray-100 dark:border-night-800">
+        <section className="py-16 md:py-24 bg-gray-50 dark:bg-night-950 relative overflow-hidden border-t border-gray-100 dark:border-night-800">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-100/50 dark:from-brand-600/20 to-transparent pointer-events-none"></div>
             <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.8, type: "spring" }} suppressHydrationWarning className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

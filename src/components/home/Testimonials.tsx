@@ -19,7 +19,7 @@ export const Testimonials = () => {
     };
 
     return (
-        <section className="py-40 bg-white dark:bg-brand-950 text-brand-950 dark:text-white overflow-hidden relative border-t border-gray-200 dark:border-white/10">
+        <section className="py-20 md:py-40 bg-white dark:bg-brand-950 text-brand-950 dark:text-white overflow-hidden relative border-t border-gray-200 dark:border-white/10">
             {/* Structural Typography */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-serif font-black text-black/5 dark:text-white/5 select-none pointer-events-none tracking-tighter mix-blend-overlay">
                 PROOF

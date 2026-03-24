@@ -19,7 +19,7 @@ const useStoreBase = create<AppState>()(
   persist(
     (set) => ({
       lang: 'en',
-      theme: 'dark',
+      theme: 'light',
       activeSlide: 0,
       toggleLang: () => set((state) => ({ lang: state.lang === 'en' ? 'bn' : 'en' })),
       toggleTheme: () => set((state) => {

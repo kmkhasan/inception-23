@@ -33,11 +33,11 @@ export const GlobalPresence = () => {
     ];
 
     return (
-        <section id="global" className="py-40 bg-white dark:bg-night-900 border-t border-gray-100 dark:border-night-800 relative z-40">
+        <section id="global" className="py-20 md:py-40 bg-white dark:bg-night-900 border-t border-gray-100 dark:border-night-800 relative z-40">
             <div className="container mx-auto px-6 max-w-7xl">
-                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} className="mb-20">
+                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} className="mb-16 md:mb-20">
                     <h2 className="text-sm font-bold uppercase tracking-[0.25em] text-brand-600 dark:text-brand-400 mb-6">{lang === 'en' ? 'Global Reach' : 'বিশ্বব্যাপী পৌঁছানো'}</h2>
-                    <h3 className="text-5xl md:text-7xl font-serif font-black text-brand-950 dark:text-white leading-[1.1] max-w-2xl">
+                    <h3 className="text-4xl md:text-5xl lg:text-7xl font-serif font-black text-brand-950 dark:text-white leading-[1.1] max-w-2xl">
                         {lang === 'en' ? 'Operating Without Borders.' : 'সীমানাবিহীন কার্যক্রম।'}
                     </h3>
                 </motion.div>

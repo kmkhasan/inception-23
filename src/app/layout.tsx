@@ -19,7 +19,7 @@ export default function RootLayout({
     // suppressHydrationWarning is critical here. 
     // It prevents crashes caused by browser extensions (like the bis_skin_checked error)
     // and dark mode/language mismatches on initial load.
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} font-sans`} suppressHydrationWarning>
         {children}
       </body>
